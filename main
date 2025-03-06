@@ -1,1 +1,4 @@
 This is a file za ami korchi--- git fetch origin + git merge origin/main = git pull origin main ---check korar jonno
+
+
+git reset --hard origin/main eida local changes rakhe na , merge commit rakhe nah Force sync (⚠️ Destroys local changes)
