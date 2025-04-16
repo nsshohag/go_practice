@@ -14,7 +14,7 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	//fmt.Println(resp)
+	fmt.Println(resp)
 
 	fmt.Println("Response status:", resp.Status)
 

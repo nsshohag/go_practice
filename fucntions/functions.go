@@ -21,11 +21,10 @@ func sum_numbers(numbers ...int) int {
 	return sum
 }
 
-// add two numbers // can not overload
+// add two numbers // can not overload // But method can be overload
 func sum(a int, b int) int {
 	return a + b
 }
-
 
 func main() {
 	//
