@@ -14,12 +14,13 @@ func f(name string) *myType {
 
 type in int
 
-// mane ekekta datatype er sathe ekekta method assign kortechi
+// mane ekekta datatype er sathe ekekta function assign kortechi za method name porichito
 // tobe mul kotha holo custom data type use korte hobe
 // can not use built in data type need to use type
 // methods (You can assign a function to a struct,dataype and in this case we call it a method )
 // method two types 1. value reciever and pointer reciever
 
+// Methods in Go cannot have the same name as the struct.
 func (p myType) value_reciever_method() {
 	fmt.Println(p.name, "showing name from value reciever methods")
 }
@@ -30,6 +31,35 @@ func (p *myType) pointer_reciever_method() {
 
 func (m in) method() {
 	fmt.Println("Showing the integer number from method instance", m)
+}
+
+type S struct {
+	Name       string
+	red_marked bool
+}
+
+// Constructor function with default values
+func Constructor_Zero_Arg() S {
+	return S{
+		Name:       "Not Provided",
+		red_marked: false,
+	}
+}
+
+// Constructor function with values
+func Constructor_2_Arg(name string, r bool) S {
+	return S{
+		Name:       name,
+		red_marked: r,
+	}
+}
+
+// Constructor function with values
+func Constructor_1_Arg(name string) S {
+	return S{
+		Name:       name,
+		red_marked: false,
+	}
 }
 
 func main() {
@@ -55,4 +85,12 @@ func main() {
 	var m in = 10
 	m.method()
 
+	// Using Constructor Function
+
+	st1 := Constructor_Zero_Arg()
+	st2 := S{"Sadat", false}
+	st3 := Constructor_2_Arg("Rony", true)
+	st4 := Constructor_2_Arg("Preity", false)
+	st5 := Constructor_1_Arg("Tusher")
+	fmt.Println(st1, st2, st3, st4, st5)
 }
